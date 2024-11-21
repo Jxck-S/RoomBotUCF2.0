@@ -369,7 +369,7 @@ except Exception as e:
     send_discord(str(e), config['DISCORD']['webhookMain'])
 
 #Clean up session and unwanted keys in reservation
-REMOVE_KEYS = ["id", "eid", "seat_id", "gid", "lid", "cost"]
+REMOVE_KEYS = ["id", "eid", "seat_id", "gid", "lid", "cost", "optionChecksums", "options", "checksum", "seat_id"]
 for reservation in reservations:
     for key in REMOVE_KEYS:
         if reservation.get(key):
