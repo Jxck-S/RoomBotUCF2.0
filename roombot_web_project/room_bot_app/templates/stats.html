@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Valid Logins</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'imgs/favicon.jpg' %}" type="image/jpeg">
+</head>
+<body>
+    <div class="header_box">
+        <small>RoomBot</small>
+        <h1>Login Statistics</h1>
+        <a href="/" class="md-button md-primary">Home</a>
+    </div>
+    <div class="reservations-container">
+        <div class="box">
+            <h2>Login Details</h2>
+            <p><strong>Total Logins:</strong> {{ total_count }}</p>
+            <p><strong>Valid Logins:</strong> {{ valid_count }}</p>
+            <p><strong>Invalid Logins:</strong> {{ invalid_count }}</p>
+            <p><strong>Hours (Valid Logins x 4):</strong> {{ hours }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Add User</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive meta tag -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'imgs/favicon.jpg' %}" type="image/jpeg">
+</head>
+<body>
+    <div class="header_box">
+        <small>RoomBot</small>
+        <h1>Add User</h1>
+        <a href="/" class="md-button md-primary">Home</a>
+    </div>
+    <div class="reservations-container">
+        <div class="box">
+            <form method="post">
+                {% csrf_token %}
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+                <br><br>
+                <label for="nickname">Nickname (optional):</label>
+                <input type="text" name="nickname" id="nickname">
+                <br><br>
+                <label for="UCFID">UCFID:</label>
+                <input type="text" name="UCFID" id="UCFID" required>
+                <br><br>
+                <label for="NID">NID:</label>
+                <input type="text" name="NID" id="NID" required>
+                <br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+                <br><br>
+                <button type="submit">Add User</button>
+            </form>
+
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+
+</body>
+</html>

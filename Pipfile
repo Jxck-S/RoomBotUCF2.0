@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+bs4 = "*"
+requests = "*"
+js2py = "*"
+configparser = "*"
+django = "*"
+pytelegrambotapi = "*"
+whitenoise = "*"
+telebot = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

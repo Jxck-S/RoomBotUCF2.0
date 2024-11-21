@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive meta tag -->
+    <title>Room Reservations</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'imgs/favicon.jpg' %}" type="image/jpeg">
+
+</head>
+<body>
+    <div class="header_box">
+        <small>RoomBot</small>
+        <h1>Room Reservations for {{date_word}}</h1> <!-- This title will now appear above the reservations -->
+        <h3>{{ date }}</h3>
+        <a href="/update-credentials" class="md-button md-primary">Update Credentials</a>
+        <a href="/add-user" class="md-button md-primary">Add User</a>
+        <a href="/stats" class="md-button md-primary">Stats</a>
+    </div>
+
+
+    <div class="reservations-container">
+        {% if reservations %}
+            {% for reservation in reservations %}
+                <div class="reservation-card">
+                    <div><strong>Room:</strong> {{ reservation.room }}</div>
+                    <div><strong>Start Time:</strong> {{ reservation.start }}</div>
+                    <div><strong>End Time:</strong> {{ reservation.end }}</div>
+                    <div><strong>Nickname:</strong> {{ reservation.nickname }}</div>
+                    <div><strong>Name:</strong> {{ reservation.name }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No reservations for today.</p>
+        {% endif %}
+    </div>
+
+</body>
+<footer></footer>
+</html>

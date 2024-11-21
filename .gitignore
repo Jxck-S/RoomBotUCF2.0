@@ -1,0 +1,28 @@
+bad_logins/
+config.ini
+logs/
+reservations/
+
+
+# Ignore Django admin static files in staticfiles directories
+*/staticfiles/admin/
+
+
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Log files
+*.log
+
+# Environment settings
+.env
+*.env
+
+# Local database
+db.sqlite3
+*.sqlite3
+reservations.json
+reservations1.0.json
+resol.json
